@@ -5,5 +5,5 @@ def build(){
      sh "mvn package"
 }
 def deploy(job,ip,contex){
-     sh  "scp /var/lib/jenkins/workspace/cicd-libraries/webapp/target/webapp.war ubuntu@172.31.44.255:/var/lib/tomcat9/webapps/ajju.war"
+     sh  "scp /var/lib/jenkins/workspace/${job}/webapp/target/webapp.war ubuntu@${ip}:/var/lib/tomcat9/webapps/${contex}.war"
 }
